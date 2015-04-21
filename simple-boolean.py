@@ -12,4 +12,10 @@ OPERATIONS = {"conjunction": and_,
 ​
 ​
 def boolean(x, y, operation):
-    return OPERATIONS[operation](x, y
+    return OPERATIONS[operation](x, y)
+    
+    
+    
+def boolean(x, y, operation):
+    return {'conjunction': x & y, 'disjunction': x | y, 'implication': (x + y - 1) if x else 1,
+    'exclusive': not(x + y - 1), 'equivalence': x == y}[operation]
